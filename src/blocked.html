@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Stay Focused</title>
+    <style>
+      :root {
+        font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+        color: #e2e8f0;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: radial-gradient(circle at top, #0f172a, #020617);
+      }
+      .panel {
+        text-align: center;
+        max-width: 520px;
+        padding: 32px;
+        border-radius: 28px;
+        border: 1px solid #1e293b;
+        background: rgba(2, 6, 23, 0.85);
+        box-shadow: 0 40px 100px rgba(15, 23, 42, 0.6);
+      }
+      button {
+        border-radius: 999px;
+        border: none;
+        padding: 12px 28px;
+        margin: 8px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      .primary {
+        background: linear-gradient(135deg, #06b6d4, #14b8a6);
+        color: #04121f;
+      }
+      .ghost {
+        background: transparent;
+        border: 1px solid #334155;
+        color: #e2e8f0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="panel">
+      <p class="eyebrow">Focus extension</p>
+      <h1>Site blocked</h1>
+      <p id="blocked-site"></p>
+      <div>
+        <button class="primary" id="open-options">Review focus tasks</button>
+        <button class="ghost" id="close-tab">Close tab</button>
+      </div>
+    </div>
+    <script>
+      const api = typeof browser !== "undefined" ? browser : chrome;
+      const params = new URLSearchParams(window.location.search);
+      const site = params.get("site");
+      const el = document.getElementById("blocked-site");
+      el.textContent = site ? `${site} is on your blocked list.` : "Stay in flow.";
+      document.getElementById("open-options").addEventListener("click", () => {
+        if (api.runtime?.openOptionsPage) api.runtime.openOptionsPage();
+      });
+      document.getElementById("close-tab").addEventListener("click", () => window.close());
+    </script>
+  </body>
+</html>
+

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Focus Extension Settings</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <main class="options">
+      <header>
+        <p class="eyebrow">Focus extension</p>
+        <h1>Settings</h1>
+        <p>Adjust Pomodoro durations, automation, and defaults.</p>
+      </header>
+
+      <section class="panel">
+        <h2>Pomodoro routines</h2>
+        <form id="pomodoro-form">
+          <label>
+            Focus minutes
+            <input id="focus-minutes" type="number" min="5" max="120" required />
+          </label>
+          <label>
+            Break minutes
+            <input id="break-minutes" type="number" min="1" max="60" required />
+          </label>
+          <label class="switch">
+            <input id="auto-start-breaks" type="checkbox" />
+            <span>Automatically start breaks</span>
+          </label>
+          <label class="switch">
+            <input id="auto-start-focus" type="checkbox" />
+            <span>Automatically start the next focus session</span>
+          </label>
+          <button type="submit" class="primary">Save Pomodoro settings</button>
+          <p id="save-status" class="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+    <script type="module" src="options.js"></script>
+  </body>
+</html>
+

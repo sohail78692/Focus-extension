@@ -1,0 +1,81 @@
+:root {
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  color: #e2e8f0;
+  background: #020617;
+}
+
+body {
+  margin: 0;
+  background: #020617;
+}
+
+.options {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  color: #38bdf8;
+}
+
+h1 {
+  margin-bottom: 12px;
+}
+
+.panel {
+  margin-top: 32px;
+  background: #0f172a;
+  border: 1px solid #1e293b;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 30px 80px rgba(2, 6, 23, 0.45);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 500;
+}
+
+label.switch {
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+input[type="number"] {
+  border-radius: 12px;
+  border: 1px solid #1e293b;
+  background: #020617;
+  color: #e2e8f0;
+  padding: 10px 12px;
+}
+
+button.primary {
+  align-self: flex-start;
+  border-radius: 999px;
+  border: none;
+  padding: 10px 22px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #06b6d4, #14b8a6);
+  color: #04121f;
+  cursor: pointer;
+}
+
+.status {
+  min-height: 20px;
+  font-size: 14px;
+  color: #38bdf8;
+}
+

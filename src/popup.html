@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Focus Extension</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="popup">
+      <section class="pomodoro card">
+        <header>
+          <p class="eyebrow">Pomodoro</p>
+          <h1>Stay in the zone</h1>
+        </header>
+        <div class="timer-display">
+          <span id="timer-phase">Idle</span>
+          <div id="timer-value">25:00</div>
+        </div>
+        <div class="timer-actions">
+          <button id="btn-start" class="primary">Start focus</button>
+          <button id="btn-break">Start break</button>
+          <button id="btn-stop" class="ghost">Stop</button>
+        </div>
+        <p class="timer-meta">
+          Completed cycles: <span id="timer-cycles">0</span>
+        </p>
+      </section>
+
+      <section class="tasks card">
+        <header>
+          <p class="eyebrow">Focus tasks</p>
+          <h2>What matters now</h2>
+        </header>
+        <ul id="task-list" class="list"></ul>
+        <form id="task-form" class="inline-form">
+          <input id="task-input" type="text" placeholder="Add a focus task" required />
+          <button type="submit" class="primary">Add</button>
+        </form>
+        <button id="btn-overlay" class="ghost w-full">Show overlay on page</button>
+      </section>
+
+      <section class="blocklist card">
+        <header>
+          <p class="eyebrow">Blocked sites</p>
+          <h2>Guard your attention</h2>
+        </header>
+        <ul id="block-list" class="list"></ul>
+        <form id="block-form" class="inline-form">
+          <input id="block-input" type="text" placeholder="example.com" required />
+          <button type="submit" class="primary">Add</button>
+        </form>
+        <footer class="card-footer">
+          <button id="btn-options">Open settings</button>
+        </footer>
+      </section>
+    </main>
+    <script src="popup.js" type="module"></script>
+  </body>
+</html>
+
